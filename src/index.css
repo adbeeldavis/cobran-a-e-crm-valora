@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* Screen-only and Print-only utilities */
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
+@media print {
+  /* Enforce exact color reproduction for charts, badges and fills */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    margin: 10mm 10mm 12mm 10mm;
+    size: auto;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Display print-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Specific focus for managerial executive summary */
+  body.print-focus-report-summary header,
+  body.print-focus-report-summary footer,
+  body.print-focus-report-summary #main-subnav-tabs,
+  body.print-focus-report-summary .hide-on-summary-print {
+    display: none !important;
+  }
+
+  body.print-focus-report-summary #relatorio-executivo-gerencia {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Specific focus for structured charts and analytics report PDF */
+  body.print-focus-charts-report header,
+  body.print-focus-charts-report footer,
+  body.print-focus-charts-report #main-subnav-tabs,
+  body.print-focus-charts-report .no-print {
+    display: none !important;
+  }
+
+  body.print-focus-charts-report #overview-dashboard-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide interactive buttons, filters, search bars, inputs, tabs, modals and toasts */
+  button,
+  .no-print,
+  #btn-print-report,
+  #main-subnav-tabs,
+  [role="dialog"],
+  .fixed,
+  input,
+  select,
+  textarea,
+  .toast-notification {
+    display: none !important;
+  }
+
+  /* Reset header positioning and remove sticky behavior */
+  header,
+  header#main-header {
+    position: static !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #0f172a !important;
+    padding-top: 0 !important;
+  }
+
+  /* Expand full container width */
+  .max-w-7xl,
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Clean up card boxes */
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-lg {
+    border-radius: 6px !important;
+  }
+
+  .shadow-xs,
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xs {
+    box-shadow: none !important;
+  }
+
+  /* Prevent page breaks inside charts, cards and table rows */
+  .break-inside-avoid,
+  tr,
+  #status-distribution-pie-chart,
+  #recharts-monthly-delinquency,
+  #due-dates-heatmap,
+  .recharts-wrapper {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Unfold overflow containers for complete printing */
+  .overflow-x-auto,
+  .overflow-y-auto {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* Table print optimization */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+    font-size: 8pt !important;
+  }
+
+  td {
+    border-bottom: 1px solid #e2e8f0 !important;
+    font-size: 8.5pt !important;
+    padding: 4px 6px !important;
+  }
+}

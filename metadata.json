@@ -1,0 +1,8 @@
+{
+  "name": "Remix - Antigravity Central de Cobrança e Inadimplência",
+  "description": "Sistema unificado de gestão de cobrança com consolidação de todas as abas de planilhas (.xlsx e Google Drive), relatórios de inadimplência em tempo real e automação de notificações.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
